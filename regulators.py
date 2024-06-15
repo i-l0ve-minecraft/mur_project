@@ -49,7 +49,7 @@ def keep_yaw(target_yaw):
 #        stop()
         
         
-speed  = 50
+# speed  = 50
 
 while True:  
 
