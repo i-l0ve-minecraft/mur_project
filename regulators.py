@@ -26,6 +26,7 @@ def set_rotate_power(power):
     auv.set_motor_power(1, -power)
     
 def keep_depth(target_depth):
+    depth = auv.get_depth()
     error_depth = target_depth - auv.get_depth()
     power_depth = 20 * error_depth
     set_vertical_power(-power_depth)
@@ -36,6 +37,13 @@ def keep_yaw(target_yaw):
     power_yaw = 0.5 * error_yaw
     set_rotate_power(power_yaw)
     sleep(0.1)
+    
+def move_forvart(rep):
+    while rep := 0:
+        auv.set_motor_power(0, 50)
+        auv.set_motor_power(2, 50)
+        rep = rep - 1
+
     
 #    if target_yaw < auv.get_yaw():
 #        set_rotate_power(+power_yaw)
@@ -51,7 +59,6 @@ def keep_yaw(target_yaw):
         
 # speed  = 50
 
-while True:  
 
 
       
@@ -95,4 +102,12 @@ while True:
         
 #пропорциональный регулятор поворота
 #    set_rotate_power(power_yaw)
-    keep_depth(2.5)
+    #синий куб в синюю
+gg = 0
+while gg := 20:
+    keep_depth(3.75)
+    gg = gg + 1
+gg = 0
+move_forvart(3)
+
+    
