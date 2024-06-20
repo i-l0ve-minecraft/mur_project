@@ -60,16 +60,28 @@ while gg < 200:
 print('gg = 0')
 gg = 0
 print('move_back')
-while gg < 220:
+while gg < 350:
     auv.set_motor_power(0, -50)
     auv.set_motor_power(1, -50)
     sleep(0.001)
     gg = gg + 1
-    print('move_back')
+    print('move_back', gg)
 stop()
 auv.set_motor_power(0, 50)
 auv.set_motor_power(1, 50)
 stop()
+sleep(1)
+keep_depth(3.7)
+auv.open_grabber()
+sleep(2)
+auv.close_grabber()
+sleep(2)
+gg = 0
+while gg < 200:
+    keep_depth(1)
+    gg = gg + 1
+    print('keep_depth', gg)
+
 
 
 
